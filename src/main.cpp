@@ -10,6 +10,15 @@ class $modify(CCMenuItemSpriteExtra) {
 		log::info("file: {}, exists: {}", sfxFile, ghc::filesystem::exists(sfxFile));
 		if (sfxFile == "") return;
 		if (!Mod::get()->getSettingValue<bool>("in-editor") && (GameManager::sharedState()->getEditorLayer() != nullptr)) return;
-		FMODAudioEngine::sharedEngine()->playEffect(sfxFile.string());
+
+		auto fmodEngine = FMODAudioEngine::sharedEngine();
+		auto system = fmodEngine->m_system;
+
+		FMOD::Channel* channel;
+		FMOD::Sound* sound;
+
+		system->createSound(sfxFile.string().c_str(), FMOD_DEFAULT, nullptr, &sound);
+		system->playSound(sound, nullptr, false, &channel);
+		channel->setVolume(1.f);
 	}
 };	
