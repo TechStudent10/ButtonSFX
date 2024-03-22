@@ -19,6 +19,8 @@ class $modify(CCMenuItemSpriteExtra) {
 
 		system->createSound(sfxFile.string().c_str(), FMOD_DEFAULT, nullptr, &sound);
 		system->playSound(sound, nullptr, false, &channel);
-		channel->setVolume(1.f);
+		channel->setVolume(
+			Mod::get()->getSettingValue<double>("volume")
+		);
 	}
 };	
