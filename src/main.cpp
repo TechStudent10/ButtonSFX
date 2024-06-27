@@ -6,7 +6,7 @@ using namespace geode::prelude;
 class $modify(CCMenuItemSpriteExtra) {
 	void activate() {
 		CCMenuItemSpriteExtra::activate();
-		auto sfxFile = Mod::get()->getSettingValue<ghc::filesystem::path>("sfx");
+		auto sfxFile = Mod::get()->getSettingValue<std::filesystem::path>("sfx");
 		// log::info("file: {}, exists: {}", sfxFile, ghc::filesystem::exists(sfxFile));
 		if (sfxFile == "") return;
 		if (!Mod::get()->getSettingValue<bool>("in-editor") && (GameManager::sharedState()->getEditorLayer() != nullptr)) return;
