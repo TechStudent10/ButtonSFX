@@ -1,18 +1,21 @@
 {
-	"geode": "3.1.1",
+	"geode": "4.0.0-alpha.1",
 	"gd": {
-		"win": "2.206",
-		"android": "2.206",
-		"mac": "2.206"
+		"win": "2.2074",
+		"android": "2.2074",
+		"mac": "2.2074"
 	},
 	"version": "v1.2.0",
 	"id": "techstudent10.button_sfx",
 	"name": "Button SFX",
 	"developer": "TechStudent10",
-	"description": "Plays a sound effect whenever a button is clicked!",
+	"description": "Plays SFX whenever a button is clicked!",
+	"links": {
+		"source": "https://github.com/TechStudent10/HideLocks"
+	},
 	"settings": {
 		"sfx": {
-			"type": "path",
+			"type": "file",
 			"name": "SFX",
 			"description": "The SFX sound file",
 			"default": "",
